@@ -1,11 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DeadTT</title>
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    hello world! gkugkughhhhuhhuuhuhuhhuhuhuhuhuhuhuhhuhuhhuhuh
+<style>
+	.container {
+		margin: 100px;
+		gap: 20px;
+		height: auto;
+		display: grid;
+		grid-template-columns: repeat(7, 1fr); 
+		align-items: start; 
+		justify-content: center;
+		background: rgba(219, 215, 240, 0.141);
+		background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+		background-size: 1000vh 100vh;
+	}
+
+	.grid {
+		display: flex;
+		flex-direction: column; 
+		align-items: center;
+	}
+
+	.dateStyle {
+		font-family: 'Space Grotesk', sans-serif;
+		color: rgb(255, 5, 70);
+		font-size: 18pt;
+		transition: .2s;
+		background: white;
+		filter: drop-shadow(5px 5px 4px rgba(128, 128, 128, 0.1));
+		height: 80px;
+		width: 100px;
+		border-radius: 20px;
+		border: 0px;
+	}
+
+	.dateStyle:hover {
+		background: blue;
+		color: white;
+	}
+
+	.dateStyle:disabled {
+		background: blue;
+		color: white;
+		opacity: 0.5;
+	}
+
+	.imageContainer {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 10px;
+        font-family:monospace;
+        font-weight:bolder;
+	}
+
+	.imageContainer img {
+		width: 100px;
+		margin-top: 10px;
+        border-radius: 20px;
+        filter: drop-shadow(5px 5px 4px rgba(128, 128, 128, 0.1));
+	}
+</style>
+
+<body class="container">
+
+	<div class="grid">
+		<button id="firstDayButton" class="dateStyle" onclick="firstDay()">March 24</button>
+		<div id="imagesOfSeville1" class="imageContainer"></div>
+	</div>
+
+	<div class="grid">
+		<button id="secondDayButton" class="dateStyle" onclick="secondDay()">March 25</button>
+		<div id="imagesOfSeville2" class="imageContainer"></div>
+	</div>
+
+	<div class="grid">
+		<button id="thirdDayButton" class="dateStyle" onclick="thirdDay()">March 26</button>
+		<div id="imagesOfSeville3" class="imageContainer"></div>
+	</div>
+
+	<div class="grid">
+		<button id="fourthDayButton" class="dateStyle" onclick="fourthDay()">March 27</button>
+		<div id="imagesOfBarcelona4" class="imageContainer"></div>
+	</div>
+
+	<div class="grid">
+		<button id="fifthDayButton" class="dateStyle" onclick="fifthDay()">March 28</button>
+		<div id="imagesOfBarcelona5" class="imageContainer"></div>
+	</div>
+
+	<div class="grid">
+		<button id="sixthDayButton" class="dateStyle" onclick="sixthDay()">March 29</button>
+		<div id="imagesOfBarcelona6" class="imageContainer"></div>
+	</div>
+
+	<div class="grid">
+		<button id="seventhDayButton" class="dateStyle" onclick="seventhDay()">March 30</button>
+		<div id="imagesOfBarcelona7" class="imageContainer"></div>
+	</div>
+
+	<script>
+		let imagesOfSeville1= [
+			"https://lh3.googleusercontent.com/proxy/UCLzi04kzBqJCC9NDRsEhyXifxb2C8Ol7bb6txDu2fEwiH9yUSUhTVDP0MCOX8tmwvCOQb_ZgQV4NbTWX9HJL1-8nM-Qe8n_Fre3UIQGT3ErortOlAoRZFCTKeHeK14Q-j1NF7ut4KBz8vhIMbsgJkrfrXW2xw=s1360-w1360-h1020-rw",
+			"https://lh3.googleusercontent.com/p/AF1QipMHvzvMJaR0u6CBiqyMvWhLtg5IDFMI9pFZpvxf=s1360-w1360-h1020-rw",
+			"https://lh3.googleusercontent.com/gps-cs-s/AB5caB-LlJw9aIUCzZP5iFvAp8z8FZ_yPmLhDDUZGDmbgjSFJBA2yXbLbX-hQMnjSV9qaFfY6kujcwaPOXfpANV73stjXV-8-caXqx6LvbaJqxQKDzgnYPryKQazIR83npYi1uRkujQa=s1360-w1360-h1020-rw"
+	];
+
+		let imagesOfSeville2= [
+		"https://lh3.googleusercontent.com/gps-cs-s/AB5caB_qJ7RN1Gr9sV-J9hycwX5dnkIjFJ4DUgd9is4BB3C36EDnRwcwj1Q49dcQIfwyYx2wuxlF0BQ8ZvRJuUonmJ5-bQj9jdWmBoy421X-ehX5BfNMnvVjwaCUkXnzAMjzXSZN3CGhzQ=s294-w294-h220-k-no",
+		"https://lh3.googleusercontent.com/gps-cs-s/AB5caB9_LXHB0J0m12qzOFZ2LJMRctXmNKpnkWL64YQs1uu6wTnrSww975Wls8zd0dgGBLfN56dYUQq9fk7CPNWB0n40MEuvHZlEX1MPdE88nXAj56sMmzXwIymqCScF4lzaX6tyJibT=s1360-w1360-h1020-rw",
+        "https://lh3.googleusercontent.com/proxy/BTBHfzgoSboQ1CUPr4q5Ms2Q08L1OOTeYBbnyqv6oN6vhQaoritHGiFVWeP2SokTIbl7Ub_IeqWaSu_RPi3sa4U7bZ23XZvtDBiLjAmw5k7ubuC-UH_XNdEspjbOMMkJAF_018CVaAK2_oxFIP-p2RyUMxt_1oI=s1360-w1360-h1020-rw"
+	];
+
+	    let imagesOfSeville3= [
+		"https://lh3.googleusercontent.com/gps-cs-s/AB5caB-erDPKgu-vjNPTIwNfTELZBoGQWAzwe94kOeBpM4eGF1E_XwKhCyHloy8QoNeTn13-thI4m9ZMSX0vlxD8WrzJG8XsQNEYgAEja-05rueH83agTDnsPgixGvRmbEkKeubo2vXPOw=s1360-w1360-h1020-rw",
+		"Basílica de la Macarena"
+	];
+        let imagesOfBarcelona4= [
+		"https://lh3.googleusercontent.com/gps-cs-s/AB5caB-epHZnxCvUVq7gPKuCca1VxFeKDpLz7hNIS7dguvZ9JI-oplNDBlDsuD5AK9kNhD99XLfaFLlDR0XTB-E51-cqh99ZzJFxPj0AcCCxiaHe-NGjX_f8BchTHfyQSWC9B4F1bM12PA=s1360-w1360-h1020-rw",
+		"Sagrada Familia",
+        "https://lh3.googleusercontent.com/p/AF1QipNkn1skmlCCzAe__ny9pfe0nqpWlR0bMKXne1oH=s1360-w1360-h1020-rw",
+        "Casa Batillo",
+        "REST"
+	];
+            let restLoopArrays= [
+                "you need to rest",
+                "you really need to rest",
+                "stop pressing this button",
+                "stop, you are tired"
+            ]
+        let imagesOfBarcelona5= [
+		"https://lh3.googleusercontent.com/gps-cs-s/AB5caB9xvwZuAD6z-FPPbparI0I58AnPA-_pauBj_iwJymlRXKvzxWFydCClQnOTbx9uqs25FJg1LxV3Q1Y2ou4PtLWQAZPSI0HMYyYwZevaUKnIrRLHydsLWkUsN_t29ER04PVru0ffnA=s1360-w1360-h1020-rw",
+		"Park Guell",
+        "It's a picnic Day!",
+        "Yay!"
+	];
+    let imagesOfBarcelona6= [
+		"https://upload.wikimedia.org/wikipedia/commons/b/bb/Creme_catalane.jpg",
+		"https://www.allrecipes.com/thmb/n_OOwj92X4rpCZyQ8sULHBUR95k=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/230569-chef-johns-patatas-brazas-ddmfs-2X3-0917-2e7985bf896d4ea0b1baa2a0c826ea0d.jpg",
+        "https://images.squarespace-cdn.com/content/v1/651f3a38b2f69811ea35c9f1/5f00716d-ee65-42fc-9467-93ea3a5da547/Bomba.jpg",
+     ]
+    let imagesOfBarcelona7= ["https://images.squarespace-cdn.com/content/v1/651f3a38b2f69811ea35c9f1/f0754ddb-f7ed-4852-9b45-137a10342beb/Carabineros.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/a/a4/Fideua_-_xurde.jpg",
+        "https://www.2foodtrippers.com/wp-content/uploads/2021/04/Pan-Com-Tomate-in-Barcelona-1024x819.jpg"
+	];
+
+
+	let imageIndex1=0;
+	let imageIndex2=0;
+    let imageIndex3=0;
+    let imageIndex4=0;
+	let imageIndex5=0;
+    let imageIndex6=0;
+    let imageIndex7=0;
+    let restArrays=0
+    let restLoopCount=0
+
+
+	function firstDay() {
+		let content=document.getElementById("imagesOfSeville1");
+		let button=document.getElementById("firstDayButton");
+
+		if (imageIndex1>=imagesOfSeville1.length) {
+			button.disabled=true;
+			return;
+		}
+
+		let img=document.createElement("img");
+		img.src=imagesOfSeville1[imageIndex1];
+		content.appendChild(img);
+		imageIndex1++;
+	}
+
+	function secondDay() {
+		let content=document.getElementById("imagesOfSeville2");
+		let button=document.getElementById("secondDayButton");
+
+		if (imageIndex2>=imagesOfSeville2.length) {
+			button.disabled=true;
+			return;
+		}
+
+		let img=document.createElement("img");
+		img.src=imagesOfSeville2[imageIndex2];
+		content.appendChild(img);
+		imageIndex2++;
+	}
+
+    function thirdDay() {
+		let content=document.getElementById("imagesOfSeville3");
+		let button=document.getElementById("thirdDayButton");
+
+		if (imageIndex3>=imagesOfSeville3.length) {
+			button.disabled=true;
+			return;
+		}
+
+        if (imagesOfSeville3[imageIndex3].startsWith("http")) {
+             let img=document.createElement("img");
+            img.src=imagesOfSeville3[imageIndex3];
+            content.appendChild(img);
+        }
+        else {
+            let label=document.createElement("p");
+            label.textContent=imagesOfSeville3[imageIndex3];
+            label.style.fontSize="10px";
+            content.appendChild(label);
+        }
+imageIndex3++;
+}
+
+function fourthDay() {
+    let content=document.getElementById("imagesOfBarcelona4");
+    let button=document.getElementById("fourthDayButton");
+
+    if (imageIndex4<imagesOfBarcelona4.length) {
+        let item=imagesOfBarcelona4[imageIndex4];
+
+        if (item.startsWith("http")) {
+            let img=document.createElement("img");
+            img.src=item;
+            content.appendChild(img);
+        } else {
+            let label=document.createElement("p");
+            label.textContent=item;
+            label.style.fontSize="14px";
+            content.appendChild(label);
+        }
+        imageIndex4++;
+    } 
+    else {
+            let label=document.createElement("p");
+            label.textContent=restLoopArrays[restArrays];
+            label.style.marginTop="2px";
+            label.style.fontSize="8px";
+            label.style.color="red";
+        content.appendChild(label);
+
+        restArrays++; 
+
+        if (restArrays>=restLoopArrays.length) {
+            restArrays=0;
+            restLoopCount++
+            if (restLoopCount>=3){
+            button.disabled=true;
+			return;}
+        }
+    }
+}
+function fifthDay() {
+		let content=document.getElementById("imagesOfBarcelona5");
+		let button=document.getElementById("fifthDayButton");
+
+		if (imageIndex5>=imagesOfBarcelona5.length) {
+			button.disabled=true;
+			return;
+		}
+
+        if (imagesOfBarcelona5[imageIndex5].startsWith("http")) {
+             let img=document.createElement("img");
+            img.src=imagesOfBarcelona5[imageIndex5];
+            content.appendChild(img);
+        }
+        else {
+            let label=document.createElement("p");
+            label.textContent=imagesOfBarcelona5[imageIndex5];
+            label.style.fontSize="12px";
+            content.appendChild(label);
+        }
+imageIndex5++;
+}
+function sixthDay() {
+		let content=document.getElementById("imagesOfBarcelona6");
+		let button=document.getElementById("sixthDayButton");
+
+		if (imageIndex6>=imagesOfBarcelona6.length) {
+			button.disabled=true;
+			return;
+		}
+
+		let img=document.createElement("img");
+		img.src=imagesOfBarcelona6[imageIndex6];
+		content.appendChild(img);
+		imageIndex6++;
+	}
+
+    function seventhDay() {
+		let content=document.getElementById("imagesOfBarcelona7");
+		let button=document.getElementById("seventhDayButton");
+
+		if (imageIndex7>=imagesOfBarcelona7.length) {
+			button.disabled=true;
+			return;
+		}
+
+		let img=document.createElement("img");
+		img.src=imagesOfBarcelona7[imageIndex7];
+		content.appendChild(img);
+		imageIndex7++;
+	}
+
+	</script>
+
 </body>
 </html>
